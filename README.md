@@ -2,5 +2,12 @@
 
 # Command Log from https://medium.com/@bryantheastronaut/ok-here-we-go-b9f683c5a00c 
 
+## Add react CLI to machine 
 1. npm i -g create-react-app
-2. reate-react-app site
+## Creating react app
+2. create-react-app site
+## Create directiry structure for backend
+3. mkdir backend && mkdir backend/models && touch backend/models/comment.js && touch backend/server.js
+## Initialize project with package.json
+4. yarn init
+
