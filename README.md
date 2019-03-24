@@ -10,4 +10,6 @@
 3. mkdir backend && mkdir backend/models && touch backend/models/comment.js && touch backend/server.js
 ## Initialize project with package.json
 4. yarn init
+## Install MERN dependencies
+5. yarn add express body-parser nodemon morgan mongoose concurrently babel-cli babel-preset-es2015 babel-preset-stage-0
 
