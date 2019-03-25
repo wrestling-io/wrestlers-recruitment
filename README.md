@@ -16,3 +16,9 @@
 6. yarn add react-markdown whatwg-fetch prop-types
 ## To Run:
 7. yarn start:dev
+## install for mongo
+8. brew install mongodb/brew/mongodb-community-shell
+
+
+Stack
+MLAb (MongoDB)
