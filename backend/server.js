@@ -17,7 +17,7 @@ const API_PORT = process.env.API_PORT || 3001;
 // now we should configure the API to use bodyParser and look for JSON data in the request body
 
 // db config -- set your URI from mLab in secrets.js
-mongoose.connect(getSecret('dbUri_tutorial'));
+mongoose.connect(getSecret('dbUri_main'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
