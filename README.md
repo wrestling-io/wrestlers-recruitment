@@ -15,4 +15,4 @@
 ## Install various react dependencies
 6. yarn add react-markdown whatwg-fetch prop-types
 ## To Run:
-7. npm start
+7. yarn start:dev
