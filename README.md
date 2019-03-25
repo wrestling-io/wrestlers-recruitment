@@ -18,7 +18,3 @@
     * `yarn start:dev`
 8. install for mongo
     * `brew install mongodb/brew/mongodb-community-shell`
-
-
-## Tech Stack (MERN)
-1. MongoDB Atlas (Clusters)
