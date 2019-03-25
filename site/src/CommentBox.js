@@ -1,3 +1,4 @@
+// CommentBox.js
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import CommentList from './CommentList';
