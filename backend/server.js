@@ -1,5 +1,3 @@
-// server.js
-
 // first we import our dependencies…
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -14,14 +12,14 @@ const router = express.Router();
 
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.API_PORT || 3001;
-// now we should configure the API to use bodyParser and look for JSON data in the request body
 
 // db config -- set your URI from mLab in secrets.js
 mongoose.connect(getSecret('dbUri_main'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// now we should configure the API to use bodyParser and look for JSON data in the request body
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
@@ -56,6 +54,34 @@ router.post('/comments', (req, res) => {
   });
 });
 
+router.put('/comments/:commentId', (req, res) => {
+  console.log(req.params);
+  const { commentId } = req.params;
+  if (!commentId) {
+    return res.json({ success: false, error: 'No comment id provided' });
+  }
+  Comment.findById(commentId, (error, comment) => {
+    if (error) return res.json({ success: false, error });
+    const { author, text } = req.body;
+    if (author) comment.author = author;
+    if (text) comment.text = text;
+    comment.save(error => {
+      if (error) return res.json({ success: false, error });
+      return res.json({ success: true });
+    });
+  });
+});
+
+router.delete('/comments/:commentId', (req, res) => {
+  const { commentId } = req.params;
+  if (!commentId) {
+    return res.json({ success: false, error: 'No comment id provided' });
+  }
+  Comment.remove({ _id: commentId }, (error, comment) => {
+    if (error) return res.json({ success: false, error });
+    return res.json({ success: true });
+  });
+});
 
 // Use our router configuration when we call /api
 app.use('/api', router);
