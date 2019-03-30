@@ -7,3 +7,4 @@
 
 # Project Specific
 backend/secrets.js
+node_modules/*
