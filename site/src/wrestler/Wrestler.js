@@ -10,7 +10,7 @@ const Wrestler = props => (
 
 Wrestler.propTypes = {
   _id: PropTypes.string,
-	first_name: PropTypes.string,
+  first_name: PropTypes.string,
   last_name: PropTypes.string,
   dob: PropTypes.string,
   weight: PropTypes.number,
