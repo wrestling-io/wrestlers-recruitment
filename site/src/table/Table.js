@@ -8,7 +8,7 @@ import Wrestler from './../wrestler/Wrestler';
 const Table = (props) => {
   const wrestlerNodes = (props.data || []).map(wrestler => (
     <Wrestler
-      id={wrestler.id}
+      _id={wrestler._id}
       first_name={wrestler.first_name}
       last_name={wrestler.last_name}
       dob={wrestler.dob}

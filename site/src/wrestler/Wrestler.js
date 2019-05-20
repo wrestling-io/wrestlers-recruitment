@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 const Wrestler = props => (
-    <div>{props.first_name}|{props.last_name}|{props.school}|{props.weight}</div>
+    <div>{props._id}|{props.first_name}|{props.last_name}|{props.school}|{props.weight}</div>
 );
 
 Wrestler.propTypes = {
+  _id: PropTypes.string,
 	first_name: PropTypes.string,
   last_name: PropTypes.string,
   dob: PropTypes.string,
