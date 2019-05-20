@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 // create new instance of the mongoose.schema. the schema takes an
 // object that shows the shape of your database entries.
 const WrestlerSchema = new Schema({
+  id: String,
   first_name: String,
   last_name: String,
   dob: String,
-  weight: int,
+  weight: Number,
   school: String,
 }, { timestamps: true });
 
