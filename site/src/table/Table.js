@@ -8,6 +8,7 @@ import Wrestler from './../wrestler/Wrestler';
 const Table = (props) => {
   const wrestlerNodes = (props.data || []).map(wrestler => (
     <Wrestler
+      key={wrestler._id}
       _id={wrestler._id}
       first_name={wrestler.first_name}
       last_name={wrestler.last_name}
@@ -30,7 +31,6 @@ const Table = (props) => {
 
 Table.propTypes = {
 	data: PropTypes.arrayOf(PropTypes.shape({
-		first_name:PropTypes.string,	
   })),
 };
 
