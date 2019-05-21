@@ -9,6 +9,7 @@ const WrestlerSchema = new Schema({
   dob: String,
   weight: Number,
   school: String,
+  accomplishments: String,
 }, { timestamps: true });
 
 // export our module to use in server.js

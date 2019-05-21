@@ -15,6 +15,7 @@ const Table = (props) => {
       dob={wrestler.dob}
       weight={wrestler.weight}
       school={wrestler.school}
+      accomplishments={wrestler.accomplishments}
     >
 		{wrestler.first_name}
     </Wrestler>
