@@ -6,7 +6,8 @@ import ReactMarkdown from 'react-markdown';
 
 const Wrestler = props => (
     <div>
-      <div>{props.first_name} {props.last_name}[{props.school}]: {props.weight} lbs</div>
+      <div>
+        <h2>{props.first_name} {props.last_name}</h2>{props.school}: {props.weight} lbs</div>
       <div> Accomplishments: {props.accomplishments}</div>
     </div>
 );

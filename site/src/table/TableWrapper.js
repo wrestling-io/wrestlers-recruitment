@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import Table from './Table'
+import './TableWrapper.css'
 
 class TableWrapper extends Component {
   constructor() {
@@ -38,8 +39,8 @@ class TableWrapper extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="container">
+        <div className="table">
           <Table
             name='wrestlers_hs'
             data={this.state.data}

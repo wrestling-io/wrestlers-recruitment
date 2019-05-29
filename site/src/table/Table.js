@@ -22,7 +22,7 @@ const Table = (props) => {
   ));
   return (
     <div>
-      <h2>Wrestlers</h2>
+      <h1>Wrestlers</h1>
       <div>
         { wrestlerNodes }
       </div>

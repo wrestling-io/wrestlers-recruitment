@@ -1,0 +1,23 @@
+.container {
+  background-color: #5b5959;
+  box-sizing: border-box;
+  padding: 25px;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+	color: white;
+}
+
+.table {
+  overflow: auto;
+  width: 75%;
+  max-width: 700px;
+  min-width: 300px;
+}
+
+.table h2 {
+  font-weight: 300;
+}
