@@ -56,6 +56,7 @@ class FormWrapper extends Component {
 
   submitWrestler = (e) => {
     e.preventDefault();
+    console.log("working")
     const { first_name, last_name, dob, weight, school, updateId } = this.state;
     if (!first_name || !last_name || !dob || !weight || !school) return;
     if (updateId) {
@@ -108,7 +109,11 @@ class FormWrapper extends Component {
         <div className="form">
           <CreateForm
             author={this.state.author}
-            text={this.state.text}
+            first_name={this.state.first_name}
+            last_name={this.state.last_name}
+            dob={this.state.dob}
+            weight={this.state.weight}
+            school={this.state.school}
             handleChangeText={this.onChangeText}
             submitWrestler={this.submitWrestler}
           />

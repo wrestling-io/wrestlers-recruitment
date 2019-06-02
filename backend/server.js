@@ -35,6 +35,28 @@ router.get('/wrestlers', (req, res) => {
   });
 });
 
+router.post('/wrestlers', (req, res) => {
+  const wrestler = new Wrestler();
+  // body parser lets us use the req.body
+  const { first_name, last_name, dob, weight, school } = req.body;
+  if (!first_name || !last_name || !dob || !weight || !school) {
+    // we should throw an error. we can do this check on the front end
+    return res.json({
+      success: false,
+      error: 'You must provide an author and wrestler'
+    });
+  }
+  wrestler.first_name= first_name;
+  wrestler.last_name = last_name;
+  wrestler.dob = dob;
+  wrestler.weight = weight;
+  wrestler.school = school;
+  wrestler.save(err => {
+    if (err) return res.json({ success: false, error: err });
+    return res.json({ success: true });
+  });
+});
+
 // Use our router configuration when we call /api
 app.use('/api', router);
 

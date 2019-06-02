@@ -46,13 +46,19 @@ const CreateForm = props => (
 CreateForm.propTypes = {
   submitWrestler: PropTypes.func.isRequired,
   handleChangeText: PropTypes.func.isRequired,
-  text: PropTypes.string,
-  author: PropTypes.string,
+  first_name: PropTypes.string,
+  last_name: PropTypes.string,
+  dob: PropTypes.string,
+  weight: PropTypes.number,
+  school: PropTypes.string,
 };
 
 CreateForm.defaultProps = {
-  text: '',
-  author: '',
+  first_name: '',
+  last_name: '',
+  dob: '',
+  weight: 0, 
+  school: '',
 };
 
 export default CreateForm;
