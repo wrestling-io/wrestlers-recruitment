@@ -11,7 +11,7 @@ class FormWrapper extends Component {
       first_name: '',
       last_name: '',
       dob: '',
-      weight: 0,
+      weight: '',
       school: '',
     };
     this.pollInterval = null;
@@ -56,12 +56,12 @@ class FormWrapper extends Component {
 
   submitWrestler = (e) => {
     e.preventDefault();
-    console.log("working")
     const { first_name, last_name, dob, weight, school, updateId } = this.state;
     if (!first_name || !last_name || !dob || !weight || !school) return;
     if (updateId) {
       this.submitUpdatedWrestler();
     } else {
+      console.log("heere:");
       this.submitNewWrestler();
     }
   }
@@ -76,7 +76,7 @@ class FormWrapper extends Component {
       body: JSON.stringify({ first_name, last_name, dob, weight, school }),
     }).then(res => res.json()).then((res) => {
       if (!res.success) this.setState({ error: res.error.message || res.error });
-      else this.setState({ first_name: '', last_name: '', dob: '', weight: 0, school: '', error: null });
+      else this.setState({ first_name: '', last_name: '', dob: '', weight: '', school: '', error: null });
     });
   }
 
@@ -88,7 +88,7 @@ class FormWrapper extends Component {
       body: JSON.stringify({ first_name, last_name, dob, weight, school }),
     }).then(res => res.json()).then((res) => {
       if (!res.success) this.setState({ error: res.error.message || res.error });
-      else this.setState({ first_name: '', last_name: '', dob: '', weight: 0, school: '', error: null });
+      else this.setState({ first_name: '', last_name: '', dob: '', weight: '', school: '', error: null });
     });
   }
 

@@ -49,7 +49,7 @@ CreateForm.propTypes = {
   first_name: PropTypes.string,
   last_name: PropTypes.string,
   dob: PropTypes.string,
-  weight: PropTypes.number,
+  weight: PropTypes.string,
   school: PropTypes.string,
 };
 
@@ -57,7 +57,7 @@ CreateForm.defaultProps = {
   first_name: '',
   last_name: '',
   dob: '',
-  weight: 0, 
+  weight: '', 
   school: '',
 };
 

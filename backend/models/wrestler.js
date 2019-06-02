@@ -7,7 +7,7 @@ const WrestlerSchema = new Schema({
   first_name: String,
   last_name: String,
   dob: String,
-  weight: Number,
+  weight: String,
   school: String,
   accomplishments: String,
 }, { timestamps: true });

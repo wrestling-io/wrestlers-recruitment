@@ -17,7 +17,7 @@ Wrestler.propTypes = {
   first_name: PropTypes.string,
   last_name: PropTypes.string,
   dob: PropTypes.string,
-  weight: PropTypes.number,
+  weight: PropTypes.string,
   // todo: make below an object
   school: PropTypes.string,
 };
