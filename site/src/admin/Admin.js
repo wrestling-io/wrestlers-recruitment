@@ -3,6 +3,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import FormWrapper from './FormWrapper';
 
 const Admin = (props) => {
 	const autheticated = false;
@@ -27,6 +28,7 @@ const Admin = (props) => {
 			<div hidden id="data">
 				IF YOU CAN SEE THIS YOU ARE AUTHENTICATED	
 			</div>
+      <FormWrapper />
     </div>
  	);
 };
