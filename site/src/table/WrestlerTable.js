@@ -1,11 +1,11 @@
-// Table.js
+// WrestlerTable.js
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Wrestler from './../wrestler/Wrestler';
 
-const Table = (props) => {
+const WrestlerTable = (props) => {
   const wrestlerNodes = (props.data || []).map(wrestler => (
     <Wrestler
       key={wrestler._id}
@@ -30,13 +30,13 @@ const Table = (props) => {
   );
 };
 
-Table.propTypes = {
+WrestlerTable.propTypes = {
 	data: PropTypes.arrayOf(PropTypes.shape({
   })),
 };
 
-Table.defaultProps = {
+WrestlerTable.defaultProps = {
   data: [],
 }
 
-export default Table;
+export default WrestlerTable;

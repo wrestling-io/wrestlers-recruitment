@@ -1,10 +1,10 @@
-// TableWrapper.js
+// WrestlerTableWrapper.js
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import Table from './Table'
-import './TableWrapper.css'
+import WrestlerTable from './WrestlerTable'
+import './WrestlerTableWrapper.css'
 
-class TableWrapper extends Component {
+class WrestlerTableWrapper extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,7 +41,7 @@ class TableWrapper extends Component {
     return (
       <div className="container">
         <div className="table">
-          <Table
+          <WrestlerTable
             name='wrestlers_hs'
             data={this.state.data}
             cols='4'
@@ -53,4 +53,4 @@ class TableWrapper extends Component {
   }
 }
 
-export default TableWrapper;
+export default WrestlerTableWrapper;
