@@ -1,10 +1,8 @@
 // Admin.js
 import React from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
-import FormWrapper from './FormWrapper';
-import WrestlerTable from './../table/WrestlerTable';
+import PropTypes from 'prop-types'; import ReactMarkdown from 'react-markdown'; import FormWrapper from './FormWrapper';
+import WrestlerTable from './../table/WrestlerTableWrapper';
 import './Admin.css';
 
 const Admin = (props) => {
@@ -30,12 +28,8 @@ const Admin = (props) => {
 			<div hidden id="data">
 				IF YOU CAN SEE THIS YOU ARE AUTHENTICATED	
 			</div>
-      <div className="table">
-        <WrestlerTable />
-      </div>
-      <div className="form">
-        <FormWrapper />
-      </div>
+      <WrestlerTable />
+      <FormWrapper />
     </div>
  	);
 };

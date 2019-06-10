@@ -1,7 +1,6 @@
 // WrestlerTable.js
 import React from 'react';
-import moment from 'moment';
-import PropTypes from 'prop-types';
+import moment from 'moment'; import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Wrestler from './../wrestler/Wrestler';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,7 +14,6 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    marginTop: theme.spacing(3),
     overflowX: 'auto',
   },
   table: {

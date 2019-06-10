@@ -1,8 +1,10 @@
-.container {
+html {
   background-color: #5b5959;
+}
+
+.container {
   box-sizing: border-box;
   padding: 25px;
-  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
@@ -13,11 +15,7 @@
 
 .table {
   overflow: auto;
-  width: 75%;
+  width: 80%;
   max-width: 700px;
   min-width: 300px;
-}
-
-.table h2 {
-  font-weight: 300;
 }
