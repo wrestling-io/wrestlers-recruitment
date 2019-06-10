@@ -3,13 +3,21 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 const Wrestler = props => (
-    <div>
-      <div>
-        <h2>{props.first_name} {props.last_name}</h2>{props.school}: {props.weight} lbs</div>
-      <div> Accomplishments: {props.accomplishments}</div>
-    </div>
+<TableRow key={props._id}>
+	<TableCell component="th" scope="props">{props.first_name} {props.last_name}</TableCell>
+	<TableCell align="right">{props.dob}</TableCell>
+	<TableCell align="right">{props.weight}</TableCell>
+	<TableCell align="right">{props.school}</TableCell>
+</TableRow>
 );
 
 Wrestler.propTypes = {
