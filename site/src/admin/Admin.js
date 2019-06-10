@@ -4,6 +4,8 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import FormWrapper from './FormWrapper';
+import WrestlerTable from './../table/WrestlerTable';
+import './Admin.css';
 
 const Admin = (props) => {
 	const autheticated = false;
@@ -21,14 +23,19 @@ const Admin = (props) => {
 	}
 
   return (
-    <div>
+    <div className="container">
       <h1>Admin</h1>
 			<button id="sign_in_button" type="button" onClick={myFunction}>Sign In</button>
 			<p id="user_status"></p>
 			<div hidden id="data">
 				IF YOU CAN SEE THIS YOU ARE AUTHENTICATED	
 			</div>
-      <FormWrapper />
+      <div className="table">
+        <WrestlerTable />
+      </div>
+      <div className="form">
+        <FormWrapper />
+      </div>
     </div>
  	);
 };
