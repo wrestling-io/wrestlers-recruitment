@@ -23,13 +23,12 @@ const Admin = (props) => {
   return (
     <div className="container">
       <h1>Admin</h1>
-			<button id="sign_in_button" type="button" onClick={myFunction}>Sign In</button>
+			<button id="sign_in_button" type="button" onClick={myFunction}>Sign In to CRUD</button>
 			<p id="user_status"></p>
 			<div hidden id="data">
-				IF YOU CAN SEE THIS YOU ARE AUTHENTICATED	
+        <FormWrapper />
 			</div>
       <WrestlerTable />
-      <FormWrapper />
     </div>
  	);
 };

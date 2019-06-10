@@ -1,6 +1,5 @@
 // FormWrapper.js
-import React, { Component } from 'react';
-import 'whatwg-fetch';
+import React, { Component } from 'react'; import 'whatwg-fetch';
 import CreateForm from './CreateForm';
 
 class FormWrapper extends Component {
