@@ -5,8 +5,8 @@ import WrestlerTable from './WrestlerTable'
 import './WrestlerTableWrapper.css'
 
 class WrestlerTableWrapper extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: [],
       error: null,
@@ -42,9 +42,8 @@ class WrestlerTableWrapper extends Component {
       <div className="container">
         <div className="table">
           <WrestlerTable
-            name='wrestlers_hs'
             data={this.state.data}
-            cols='4'
+            canCRUD={this.props.canCRUD}
           />
         </div>
         {this.state.error && <p>{this.state.error}</p>}

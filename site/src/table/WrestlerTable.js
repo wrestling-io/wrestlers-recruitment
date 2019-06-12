@@ -56,6 +56,42 @@ export default function WrestlerTable(props) {
       { title: 'School', field: 'school'},
     ],
   });
+  
+  const CRUDAction = {
+    onRowAdd: newData =>
+      new Promise(resolve => {
+        setTimeout(() => {
+          resolve();
+          console.log(newData);
+          const data = [...state.data];
+          data.push(newData);
+          setState({ ...state, data });
+        }, 600);
+      }),
+    onRowUpdate: (newData, oldData) =>
+      new Promise(resolve => {
+        setTimeout(() => {
+          resolve();
+          const data = [...state.data];
+          data[data.indexOf(oldData)] = newData;
+          setState({ ...state, data });
+        }, 600);
+      }),
+    onRowDelete: oldData =>
+      new Promise(resolve => {
+        setTimeout(() => {
+          resolve();
+          const data = [...state.data];
+          data.splice(data.indexOf(oldData), 1);
+          setState({ ...state, data });
+        }, 600);
+      }),
+  }
+
+  let action = null;
+  if (props.canCRUD == true) {
+    action = CRUDAction;
+  }
 
   return (
     <MaterialTable
@@ -63,82 +99,7 @@ export default function WrestlerTable(props) {
       columns={state.columns}
       data={props.data}
 			icons={tableIcons}
-      editable={{
-        onRowAdd: newData =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              const data = [...state.data];
-              data.push(newData);
-              setState({ ...state, data });
-            }, 600);
-          }),
-        onRowUpdate: (newData, oldData) =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              const data = [...state.data];
-              data[data.indexOf(oldData)] = newData;
-              setState({ ...state, data });
-            }, 600);
-          }),
-        onRowDelete: oldData =>
-          new Promise(resolve => {
-            setTimeout(() => {
-              resolve();
-              const data = [...state.data];
-              data.splice(data.indexOf(oldData), 1);
-              setState({ ...state, data });
-            }, 600);
-          }),
-      }}
+      editable={action}
     />
   );
 }
-
-const restlerTable = (props) => {
-  const wrestlerNodes = (props.data || []).map(wrestler => (
-    <Wrestler
-      key={wrestler._id}
-      _id={wrestler._id}
-      first_name={wrestler.first_name}
-      last_name={wrestler.last_name}
-      dob={wrestler.dob}
-      weight={wrestler.weight}
-      school={wrestler.school}
-      accomplishments={wrestler.accomplishments}
-    >
-		{wrestler.first_name}
-    </Wrestler>
-  ));
-  return (
-    <div>
-    <h1>Wrestlers</h1>
-		<Paper>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">DOB</TableCell>
-            <TableCell align="right">Weight</TableCell>
-            <TableCell align="right">School</TableCell>
-          </TableRow>
-        </TableHead>
-				<TableBody>
-					{wrestlerNodes}
-        </TableBody>
-			</Table>
-    </Paper>
-    </div>
-  );
-};
-
-WrestlerTable.propTypes = {
-	data: PropTypes.arrayOf(PropTypes.shape({
-  })),
-};
-
-WrestlerTable.defaultProps = {
-  data: [],
-}
-
