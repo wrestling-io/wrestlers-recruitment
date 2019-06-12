@@ -69,7 +69,7 @@ export default function WrestlerTable(props) {
 						body: JSON.stringify(newData),
 					}).then(res => res.json()).then((res) => {
 						if (!res.success) setState({ error: res.error.message || res.error });
-						else console.log("Error: onRowAdd");
+						else console.log("Wrestler add success");
 					});
         }, 600);
       }),
@@ -86,9 +86,11 @@ export default function WrestlerTable(props) {
       new Promise(resolve => {
         setTimeout(() => {
           resolve();
-          const data = [...state.data];
-          data.splice(data.indexOf(oldData), 1);
-          setState({ ...state, data });
+					fetch(`api/wrestlers/${oldData._id}`, { method: 'DELETE' })
+      			.then(res => res.json()).then((res) => {
+       	 			if (!res.success) this.setState({ error: res.error });
+							else console.log("Wrestler delete success");
+      			});
         }, 600);
       }),
   }

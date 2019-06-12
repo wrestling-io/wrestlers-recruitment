@@ -57,6 +57,17 @@ router.post('/wrestlers', (req, res) => {
   });
 });
 
+router.delete('/wrestlers/:wrestlerId', (req, res) => {
+  const { wrestlerId } = req.params;
+  if (!wrestlerId) {
+    return res.json({ success: false, error: 'No wrestler id provided' });
+  }
+  Wrestler.remove({ _id: wrestlerId}, (error, comment) => {
+    if (error) return res.json({ success: false, error });
+    return res.json({ success: true });
+  });
+});
+
 // Use our router configuration when we call /api
 app.use('/api', router);
 
