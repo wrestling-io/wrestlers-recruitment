@@ -55,6 +55,7 @@ export default function WrestlerTable(props) {
       { title: 'Weight', field: 'weight'},
       { title: 'School', field: 'school'},
     ],
+		error: null,
   });
   
   const CRUDAction = {
@@ -62,10 +63,14 @@ export default function WrestlerTable(props) {
       new Promise(resolve => {
         setTimeout(() => {
           resolve();
-          console.log(newData);
-          const data = [...state.data];
-          data.push(newData);
-          setState({ ...state, data });
+					fetch('/api/wrestlers', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(newData),
+					}).then(res => res.json()).then((res) => {
+						if (!res.success) setState({ error: res.error.message || res.error });
+						else console.log("Error: onRowAdd");
+					});
         }, 600);
       }),
     onRowUpdate: (newData, oldData) =>

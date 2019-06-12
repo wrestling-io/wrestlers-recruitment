@@ -19,10 +19,9 @@ class Admin extends Component {
 		var txt;
 		var input = prompt("Password:");
 		if (input == null || input != "robert420") {
-			txt = "You are unauthenticated";
+			txt = "You are not authenticated";
 		} else {
 			txt = "You are authenticated";
-			document.getElementById("data").style.display = "block";
 			document.getElementById("sign_in_button").style.display = "none";
       this.setState({canCRUD: true});
 		}
@@ -34,10 +33,7 @@ class Admin extends Component {
 			<div className="container">
 				<h1>Admin</h1>
 				<button id="sign_in_button" type="button" onClick={this.myFunction}>Sign In to CRUD</button>
-				<p id="user_status"></p>
-				<div hidden id="data">
-					<FormWrapper />
-				</div>
+				<p id="user_status">You are not authenticated</p>
 				<WrestlerTable 
 					canCRUD={this.state.canCRUD}
 				/>
