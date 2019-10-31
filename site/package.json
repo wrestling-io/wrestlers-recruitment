@@ -14,7 +14,7 @@
     "date-fns": "2.0.0-alpha.27",
     "express": "^4.16.4",
     "material-table": "^1.39.0",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "prop-types": "^15.7.2",
